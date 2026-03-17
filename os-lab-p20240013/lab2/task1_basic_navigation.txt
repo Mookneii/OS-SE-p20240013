@@ -1,0 +1,29 @@
+/home/mony
+total 100
+drwxr-x--- 18 mony mony 4096 Mar 17 13:16 .
+drwxr-xr-x  3 root root 4096 Mar 12 15:50 ..
+-rw-------  1 mony mony 4167 Mar 17 08:39 .bash_history
+-rw-r--r--  1 mony mony  220 Mar 31  2024 .bash_logout
+-rw-r--r--  1 mony mony 3771 Mar 31  2024 .bashrc
+drwx------ 12 mony mony 4096 Mar 17 08:21 .cache
+drwx------ 14 mony mony 4096 Mar 17 08:21 .config
+drwxr-xr-x  3 mony mony 4096 Mar 17 14:13 Desktop
+drwxr-xr-x  2 mony mony 4096 Mar 12 15:55 Documents
+drwxr-xr-x  3 mony mony 4096 Mar 16 22:11 Downloads
+-rw-rw-r--  1 mony mony  242 Mar 16 22:32 .gitconfig
+drwx------  2 mony mony 4096 Mar 17 13:16 .gnupg
+-rw-------  1 mony mony   20 Mar 16 22:02 .lesshst
+drwx------  4 mony mony 4096 Mar 12 15:55 .local
+drwxr-xr-x  2 mony mony 4096 Mar 12 15:55 Music
+drwxr-xr-x  3 mony mony 4096 Mar 12 15:56 Pictures
+drwx------  3 mony mony 4096 Mar 17 08:21 .pki
+-rw-r--r--  1 mony mony  807 Mar 31  2024 .profile
+drwxr-xr-x  2 mony mony 4096 Mar 12 15:55 Public
+drwx------  8 mony mony 4096 Mar 17 08:42 snap
+drwx------  2 mony mony 4096 Mar 17 13:24 .ssh
+-rw-r--r--  1 mony mony    0 Mar 12 15:58 .sudo_as_admin_successful
+drwxr-xr-x  2 mony mony 4096 Mar 12 15:55 Templates
+drwxr-xr-x  2 mony mony 4096 Mar 12 15:55 Videos
+drwxrwxr-x  4 mony mony 4096 Mar 17 08:21 .vscode
+--- Back to home ---
+/
