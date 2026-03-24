@@ -1,0 +1,25 @@
+=== Task 4: Navigation with Paths ===
+--- Absolute path to HR/policies ---
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/hr/policies
+leave_policy.txt
+remote_work.txt
+--- Sideways to engineering/frontend/ ---
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/engineering/frontend
+app_config.txt
+index.html
+styles.css
+--- Up two levels to techcorp/ ---
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp
+--- Absolute path to marketing/campaigns/ ---
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/marketing/campaigns
+q1_launch.txt
+social_media.txt
+--- cd - (back to previous directory) ---
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/engineering/backend
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/marketing/assets
+/usr/bin
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/marketing/assets
+/home/mony/Desktop/os-se-p20240013/os-lab-p20240013/lab2/techcorp/hr/onboarding
+checklist.txt
+welcome_guide.txt

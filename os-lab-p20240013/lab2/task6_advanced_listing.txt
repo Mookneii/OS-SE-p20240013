@@ -1,0 +1,237 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+docker-compose.yml
+Dockerfile
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+styles.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo_brief.txt
+logo.png
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+total 4
+-rw-rw-r-- 1 mony mony 26 Mar 19 09:42 frontend_config.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 index.html
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 styles.css
+total 8
+-rw-rw-r-- 1 mony mony 29 Mar 24 23:55 pipeline_backup.txt
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:43 server_config.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 app.js
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 database.sql
+total 12
+-rw-rw-r-- 1 mony mony 48 Mar 24 23:37 server_notice.txt
+-rw-rw-r-- 1 mony mony 34 Mar 24 23:55 security_audit.txt
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:44 pipeline.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 docker-compose.yml
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 Dockerfile
+
+--- Sort by Time: techcorp/ (ls -lt) ---
+total 8
+-rw-rw-r-- 1 mony mony 32 Mar 17 14:54 remote_work.txt
+-rw-rw-r-- 1 mony mony 39 Mar 17 14:54 leave_policy.txt
+total 12
+-rw-rw-r-- 1 mony mony 39 Mar 24 23:48 leave_policy.txt
+-rw-rw-r-- 1 mony mony 23 Mar 24 23:38 handbook.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:38 checklist.txt
+-rw-rw-r-- 1 mony mony 52 Mar 19 09:38 welcome_guide.txt
+total 8
+-rw-rw-r-- 1 mony mony 32 Mar 19 09:53 q1_2026_launch.txt
+-rw-rw-r-- 1 mony mony 35 Mar 19 09:53 social_media.txt
+
+--- Human-Readable (ls -lh) ---
+total 4.0K
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 banner.jpg
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 brochure.pdf
+-rw-rw-r-- 1 mony mony 22 Mar 24 23:37 logo_brief.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 logo.png
+total 12K
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 docker-compose.yml
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 Dockerfile
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:44 pipeline.txt
+-rw-rw-r-- 1 mony mony 34 Mar 24 23:55 security_audit.txt
+-rw-rw-r-- 1 mony mony 48 Mar 24 23:37 server_notice.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 database.sql
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 app.js
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:43 server_config.txt
+-rw-rw-r-- 1 mony mony 29 Mar 24 23:55 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-rw-r-- 1 mony mony 52 Mar 19 09:38 welcome_guide.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:38 checklist.txt
+-rw-rw-r-- 1 mony mony 23 Mar 24 23:38 handbook.txt
+-rw-rw-r-- 1 mony mony 39 Mar 24 23:48 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxrwxr-x 5 mony mony 4.0K Mar 17 14:52 engineering
+drwxrwxr-x 4 mony mony 4.0K Mar 17 14:52 hr
+drwxrwxr-x 4 mony mony 4.0K Mar 24 23:38 marketing
+
+techcorp/engineering:
+total 12K
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:55 backend
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:55 devops
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:56 frontend
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-rw-r-- 1 mony mony 29 Mar 24 23:55 pipeline_backup.txt
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:43 server_config.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 app.js
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 database.sql
+
+techcorp/engineering/devops:
+total 12K
+-rw-rw-r-- 1 mony mony 48 Mar 24 23:37 server_notice.txt
+-rw-rw-r-- 1 mony mony 34 Mar 24 23:55 security_audit.txt
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:44 pipeline.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 docker-compose.yml
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 Dockerfile
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-rw-r-- 1 mony mony 26 Mar 19 09:42 frontend_config.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 index.html
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:43 styles.css
+
+techcorp/hr:
+total 8.0K
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:48 onboarding
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:55 policies
+
+techcorp/hr/onboarding:
+total 12K
+-rw-rw-r-- 1 mony mony 52 Mar 19 09:38 welcome_guide.txt
+-rw-rw-r-- 1 mony mony 39 Mar 24 23:48 leave_policy.txt
+-rw-rw-r-- 1 mony mony 23 Mar 24 23:38 handbook.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:38 checklist.txt
+
+techcorp/hr/policies:
+total 8.0K
+-rw-rw-r-- 1 mony mony 39 Mar 17 14:54 leave_policy.txt
+-rw-rw-r-- 1 mony mony 32 Mar 17 14:54 remote_work.txt
+
+techcorp/marketing:
+total 8.0K
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:41 assets
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:56 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 mony mony 22 Mar 24 23:37 logo_brief.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 banner.jpg
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 brochure.pdf
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 mony mony 35 Mar 19 09:53 social_media.txt
+-rw-rw-r-- 1 mony mony 32 Mar 19 09:53 q1_2026_launch.txt
+--- Challenge Investigation ---
+total 12
+-rw-rw-r-- 1 mony mony 39 Mar 24 23:48 leave_policy.txt
+-rw-rw-r-- 1 mony mony 23 Mar 24 23:38 handbook.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:38 checklist.txt
+-rw-rw-r-- 1 mony mony 52 Mar 19 09:38 welcome_guide.txt
+techcorp/marketing/:
+total 8.0K
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:41 assets
+drwxrwxr-x 2 mony mony 4.0K Mar 24 23:56 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 banner.jpg
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 brochure.pdf
+-rw-rw-r-- 1 mony mony 22 Mar 24 23:37 logo_brief.txt
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:54 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 mony mony 32 Mar 19 09:53 q1_2026_launch.txt
+-rw-rw-r-- 1 mony mony 35 Mar 19 09:53 social_media.txt
+total 12
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 Dockerfile
+-rw-rw-r-- 1 mony mony  0 Mar 19 09:44 docker-compose.yml
+-rw-rw-r-- 1 mony mony 29 Mar 19 09:44 pipeline.txt
+-rw-rw-r-- 1 mony mony 34 Mar 24 23:55 security_audit.txt
+-rw-rw-r-- 1 mony mony 48 Mar 24 23:37 server_notice.txt
+total 104K
+8.0K -rw-------  1 mony mony 7.2K Mar 19 15:58 .bash_history
+4.0K drwxr-x--- 19 mony mony 4.0K Mar 19 10:20 .
+4.0K drwxr-xr-x  3 root root 4.0K Mar 12 15:50 ..
+4.0K drwx------ 14 mony mony 4.0K Mar 19 10:21 .cache
+4.0K drwx------ 16 mony mony 4.0K Mar 19 15:36 .config
+4.0K drwxr-xr-x  3 mony mony 4.0K Mar 17 14:13 Desktop
+4.0K drwxr-xr-x  2 mony mony 4.0K Mar 12 15:55 Documents
+4.0K drwxrwxr-x  3 mony mony 4.0K Mar 19 10:20 .dotnet
+4.0K drwxr-xr-x  3 mony mony 4.0K Mar 19 15:29 Downloads
+4.0K drwx------  2 mony mony 4.0K Mar 24 22:53 .gnupg
+4.0K drwx------  4 mony mony 4.0K Mar 12 15:55 .local
+4.0K drwxr-xr-x  2 mony mony 4.0K Mar 12 15:55 Music
+4.0K drwxr-xr-x  3 mony mony 4.0K Mar 12 15:56 Pictures
+4.0K drwx------  3 mony mony 4.0K Mar 17 08:21 .pki
+4.0K drwxr-xr-x  2 mony mony 4.0K Mar 12 15:55 Public
+4.0K drwx------  8 mony mony 4.0K Mar 17 08:42 snap
+4.0K drwx------  2 mony mony 4.0K Mar 17 13:24 .ssh
+4.0K drwxr-xr-x  2 mony mony 4.0K Mar 12 15:55 Templates
+4.0K drwxr-xr-x  2 mony mony 4.0K Mar 12 15:55 Videos
+4.0K drwxrwxr-x  4 mony mony 4.0K Mar 17 08:21 .vscode
+4.0K -rw-r--r--  1 mony mony 3.7K Mar 31  2024 .bashrc
+4.0K -rw-r--r--  1 mony mony  807 Mar 31  2024 .profile
+4.0K -rw-rw-r--  1 mony mony  242 Mar 16 22:32 .gitconfig
+4.0K -rw-r--r--  1 mony mony  220 Mar 31  2024 .bash_logout
+4.0K -rw-------  1 mony mony   20 Mar 16 22:02 .lesshst
+   0 -rw-r--r--  1 mony mony    0 Mar 12 15:58 .sudo_as_admin_successful
