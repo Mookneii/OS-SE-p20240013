@@ -42,15 +42,41 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What flags did you pass to `open()`? What does each flag mean?**
 
-   > [Your answer]
+ In file_creator_sys.c, the open() function uses:
+
+open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+
+Flags used:
+
+O_WRONLY → opens the file for writing only.
+O_CREAT → creates the file if it does not already exist.
+O_TRUNC → clears the file content if the file already exists.
 
 2. **What is `0644`? What does each digit represent?**
 
-   > [Your answer]
+   0644 defines file permissions when a new file is created.
+
+Meaning of each digit:
+
+0 → indicates octal number.
+6 → owner permissions = read + write (4 + 2)
+4 → group permissions = read only
+4 → others permissions = read only
+
+Permission summary:
+
+Owner: read, write
+Group: read
+Others: read
 
 3. **What does `fopen("output.txt", "w")` do internally that you had to do manually?**
 
-   > [Your answer]
+   fopen("output.txt", "w") internally performs several operations automatically:
+
+Opens or creates the file
+Sets write mode
+Clears old file content if the file exists
+Creates a FILE structure for buffered I/O
 
 ### Part B — File Reader & Display
 
@@ -68,11 +94,31 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What does `read()` return? How is this different from `fgets()`?**
 
-   > [Your answer]
+  read() returns the number of bytes actually read from the file.
+
+A positive value means data was read successfully.
+0 means end of file (EOF).
+-1 means an error occurred.
+
+Example:
+
+bytesRead = read(fd, buffer, sizeof(buffer));
+
+This is different from fgets(), because fgets() reads text line by line and returns a pointer to the string stored in the buffer.
+
+Example:
+
+fgets(buffer, sizeof(buffer), fp);
 
 2. **Why do you need a loop when using `read()`? When does it stop?**
 
-   > [Your answer]
+   A loop is needed because read() may not read the entire file in one call. It reads only up to the buffer size each time.
+
+Example:
+
+while ((bytesRead = read(fd, buffer, sizeof(buffer))) > 0) {
+    write(1, buffer, bytesRead);
+}
 
 ---
 
