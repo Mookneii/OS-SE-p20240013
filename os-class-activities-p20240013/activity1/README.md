@@ -1,8 +1,8 @@
 # Class Activity 1 — System Calls in Practice
 
-- **Student Name:** [Your Name Here]
-- **Student ID:** [Your Student ID Here]
-- **Date:** [Date of Submission]
+- **Student Name:** MI Sorakmony
+- **Student ID:** p20240013
+- **Date:** 19/3/2026
 
 ---
 
@@ -10,7 +10,7 @@
 
 Screenshot of running `hello_syscall.c` on Linux:
 
-![Hello syscall](screenshots/hello_syscall.png)
+![Hello syscall](screenshots/hello_sys.png)
 
 Screenshot of running `hello_winapi.c` on Windows (CMD/PowerShell/VS Code):
 
@@ -18,7 +18,7 @@ Screenshot of running `hello_winapi.c` on Windows (CMD/PowerShell/VS Code):
 
 Screenshot of running `copyfilesyscall.c` on Linux:
 
-![Copy file syscall](screenshots/copyfilesyscall.png)
+![Copy file syscall](screenshots/copy_result.png)
 
 ---
 
@@ -42,45 +42,32 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What flags did you pass to `open()`? What does each flag mean?**
 
-        In file_creator_sys.c, the open() function uses:
-       
-       open("output.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-       
-       Flags used:
-       
-       O_WRONLY → opens the file for writing only.
-       O_CREAT → creates the file if it does not already exist.
-       O_TRUNC → clears the file content if the file already exists.
+   **Flags passed to open():**
+
+   >O_WRONLY — open for writing only
+
+   >O_CREAT — create the file if it doesn't exist
+
+   >O_TRUNC — if the file already exists, erase its contents
 
 2. **What is `0644`? What does each digit represent?**
 
-          0644 defines file permissions when a new file is created.
-       
-       Meaning of each digit:
-       
-       0 → indicates octal number.
-       6 → owner permissions = read + write (4 + 2)
-       4 → group permissions = read only
-       4 → others permissions = read only
-       
-       Permission summary:
-       
-       Owner: read, write
-       Group: read
-       Others: read
+   > It's an octal permission value. 0 = octal prefix, 6 = owner (read+write), 4 = group (read only), 4 = others (read only)
 
 3. **What does `fopen("output.txt", "w")` do internally that you had to do manually?**
 
-          fopen("output.txt", "w") internally performs several operations automatically:
-       
-       Opens or creates the file
-       Sets write mode
-       Clears old file content if the file exists
-       Creates a FILE structure for buffered I/O
+   > It calls open() with O_WRONLY | O_CREAT | O_TRUNC and sets up an internal buffer, error flags, and a FILE* struct — all of which you had to handle manually.
 
 ### Part B — File Reader & Display
 
-**Describe your implementation:** [Your notes]
+**Describe your implementation:** 
+>  Open "output.txt" for reading
+
+>  Read content into buffer in a loop
+
+>  Write content to terminal using write()
+
+>  Close the file
 
 **Version A — Library Functions (`file_reader_lib.c`):**
 
@@ -94,82 +81,85 @@ Screenshot of running `copyfilesyscall.c` on Linux:
 
 1. **What does `read()` return? How is this different from `fgets()`?**
 
-         read() returns the number of bytes actually read from the file.
-       
-       A positive value means data was read successfully.
-       0 means end of file (EOF).
-       -1 means an error occurred.
-       
-       Example:
-       
-       bytesRead = read(fd, buffer, sizeof(buffer));
-       
-       This is different from fgets(), because fgets() reads text line by line and returns a pointer to the string stored in the buffer.
-       
-       Example:
-       
-       fgets(buffer, sizeof(buffer), fp);
+   > read() returns the number of bytes actually read as a raw integer, or 0 at EOF, or -1 on error. fgets() returns a pointer to the buffer on success or NULL on EOF/error — it also stops at newlines automatically.
 
 2. **Why do you need a loop when using `read()`? When does it stop?**
 
-          A loop is needed because read() may not read the entire file in one call. It reads only up to the buffer size each time.
-       
-       Example:
-       
-       while ((bytesRead = read(fd, buffer, sizeof(buffer))) > 0) {
-           write(1, buffer, bytesRead);
-       }
+   > read() may not read the entire file in one call — it reads up to the requested number of bytes. You loop until it returns 0, which means end of file.
 
 ---
 
 ## Task 2: Directory Listing & File Info
 
-**Describe your implementation:** [Your notes]
+**Describe your implementation:** 
+
+   > 1. Open current directory
+   
+   >  2. Print header
+    
+   >  3. Loop through entries
+
+   >  4. Get file info using stat()
+
+   >  5. Format output into buffer
+   
+   >  6. Write to stdout using write()
+   
+   >  7. Close directory
+   
 
 ### Version A — Library Functions (`dir_list_lib.c`)
 
-![Task 2 - Version A](screenshots/task2_lib.png)
+<img width="822" height="209" alt="copyfilesyscall" src="https://github.com/user-attachments/assets/1a11c8c6-0bf0-4b10-bf0f-551eae1e1bbe" />
+
 
 ### Version B — System Calls (`dir_list_sys.c`)
 
-![Task 2 - Version B](screenshots/task2_sys.png)
+<img width="817" height="224" alt="hello_syscall" src="https://github.com/user-attachments/assets/61903195-b3c3-4790-a086-546473f89077" />
+
 
 ### Questions
 
 1. **What struct does `readdir()` return? What fields does it contain?**
 
-   > [Your answer]
+   **readdir() returns a struct dirent with fields:**
 
+   >d_ino — inode number
+
+   >d_name — filename (as a string)
+
+   >d_type — file type (regular, directory, etc.)
+
+   >d_reclen, d_off — record length and offset
 2. **What information does `stat()` provide beyond file size?**
 
-   > [Your answer]
+   **File permissions, owner UID/GID, inode number, number of hard links, last access/modification/change times, block size and block count**
 
 3. **Why can't you `write()` a number directly — why do you need `snprintf()` first?**
 
-   > [Your answer]
+   **write() sends raw bytes — it doesn't know about integers or formatting. You need snprintf() to convert the number into a human-readable string first, then write those characters.**
 
 ---
 
 ## Optional Bonus: Windows API (`file_creator_win.c`)
 
 Screenshot of running on Windows:
+<img width="1124" height="123" alt="hello_winapi" src="https://github.com/user-attachments/assets/0fe0eb81-e87d-4759-b6e9-ea12e2d60538" />
 
-![Task 1 - Windows](screenshots/task1_win.png)
 
 ### Bonus Questions
 
 1. **Why does Windows use `HANDLE` instead of integer file descriptors?**
 
-   > [Your answer]
+**HANDLE is an opaque pointer/reference managed by the Windows kernel object system, which supports many object types (files, threads, events, etc.) uniformly. POSIX uses small integers because Unix treats everything as a file with a simple fd table per process.**
 
 2. **What is the Windows equivalent of POSIX `fork()`? Why is it different?**
 
-   > [Your answer]
+**CreateProcess(). It's different because Windows doesn't use copy-on-write process cloning — it always creates a brand new process from a specified executable, rather than duplicating the calling process like fork() does.**
 
 3. **Can you use POSIX calls on Windows?**
 
-   > [Your answer]
-
+   **Not natively. But you can with WSL (Windows Subsystem for Linux), which provides a real Linux kernel, or with Cygwin, which emulates POSIX on top of the Windows API. MinGW provides some POSIX-like functions but not full compatibility.**
 ---
 
 ## Task 3: strace Analysis
@@ -180,45 +170,57 @@ Screenshot of running on Windows:
 
 <!-- Screenshot: strace -e trace=openat,read,write,close ./file_creator_lib -->
 <!-- IMPORTANT: Highlight/annotate the key system calls in your screenshot -->
-![strace - Library version File Creator](screenshots/strace_lib_creator.png)
+<img width="807" height="341" alt="strace_creator_lib" src="https://github.com/user-attachments/assets/18bf697c-f5e2-4ff6-80bc-abf85e9c178a" />
+
+
 
 ### strace Output — System Call Version (File Creator)
 
 <!-- Screenshot: strace -e trace=openat,read,write,close ./file_creator_sys -->
 <!-- IMPORTANT: Highlight/annotate the key system calls in your screenshot -->
-![strace - System call version File Creator](screenshots/strace_sys_creator.png)
+
 
 ### strace Output — Library Version (File Reader or Dir Listing)
 
-![strace - Library version](screenshots/strace_lib_reader.png)
+<img width="807" height="341" alt="strace_creator_sys" src="https://github.com/user-attachments/assets/06719c19-105e-46e5-8a23-58c1526e9e9b" />
+
 
 ### strace Output — System Call Version (File Reader or Dir Listing)
 
-![strace - System call version](screenshots/strace_sys_reader.png)
+<img width="812" height="472" alt="strace_output_sys" src="https://github.com/user-attachments/assets/36908e8a-6dc0-4372-b570-0fbd194dcf51" />
+
 
 ### strace -c Summary Comparison
-
+> 📸 Screenshot of `strace summary lib and sys`:
 <!-- Screenshot of `strace -c` output for both versions -->
-![strace summary - Library](screenshots/strace_summary_lib.png)
-![strace summary - Syscall](screenshots/strace_summary_sys.png)
+<img width="807" height="341" alt="strace_sammary_lib" src="https://github.com/user-attachments/assets/d0ec3756-db82-4c83-a8d5-b31134920c16" />
+
+<img width="807" height="538" alt="strace_sammary_sys" src="https://github.com/user-attachments/assets/ce3a178e-3c83-4300-ac1a-4db85801f2ae" />
+
 
 ### Questions
 
 1. **How many system calls does the library version make compared to the system call version?**
 
-   > [Your answer — use the `strace -c` counts]
+   **System call count comparison:**
+>The library version makes significantly more — typically 108 system calls vs. 108 for the syscall version, i think if the file is large lib version fill use syscall larger than syscall version.
 
 2. **What extra system calls appear in the library version? What do they do?**
 
-   > [Your answer — mention `brk`, `mmap`, `fstat`, etc.]
+   **Extra system calls in the library version:**
+    - brk — adjusts the heap for dynamic memory allocation (used by stdio buffering)
+    - mmap — maps shared libraries (like libc) into memory
+    - fstat — checks file metadata for buffering decisions
+    -  openat — opens shared library files during startup
 
 3. **How many `write()` calls does `fprintf()` actually produce?**
 
-   > [Your answer]
+  **Usually just 1 — because fprintf() buffers output internally and flushes it all at once when the buffer is full or the file is closed.**
 
 4. **In your own words, what is the real difference between a library function and a system call?**
 
-   > [Your answer]
+   - system call is a direct request to kernal and faster compare to library function
+   - library function is code that implemted to call syscall .
 
 ---
 
@@ -226,49 +228,68 @@ Screenshot of running on Windows:
 
 ### System Information
 
-> 📸 Screenshot of `uname -a`, `/proc/cpuinfo`, `/proc/meminfo`, `/proc/version`, `/proc/uptime`:
+> 📸 Screenshot of `uname -a`, `/proc/cpuinfo`:
 
-![System Info](screenshots/task4_system_info.png)
+<img width="820" height="501" alt="task4_1" src="https://github.com/user-attachments/assets/6638aed7-e272-41fa-89fe-66615921fbb4" />
+
+> 📸 Screenshot of  `/proc/meminfo`:
+<img width="820" height="501" alt="task4_2" src="https://github.com/user-attachments/assets/348d3064-68b0-400b-8491-99cf174c10e7" />
+
+> 📸 Screenshot of `/proc/version`, `/proc/uptime`:
+<img width="807" height="410" alt="task4_partB_1" src="https://github.com/user-attachments/assets/e3ee9d00-b218-4b7f-ad02-967765223e05" />
 
 ### Process Information
 
-> 📸 Screenshot of `/proc/self/status`, `/proc/self/maps`, `ps aux`:
+> 📸 Screenshot of `/proc/self/status` :
 
-![Process Info](screenshots/task4_process_info.png)
+<img width="811" height="517" alt="task4_partB_2" src="https://github.com/user-attachments/assets/6ab39649-3992-45bd-98d6-4a68b207e3af" />
+
+> 📸 Screenshot of `/proc/self/maps`:
+<img width="811" height="517" alt="task4_partB_3" src="https://github.com/user-attachments/assets/8f5c496d-013c-4db3-9425-97c5b95a68be" />
+
+> 📸 Screenshot of `ps aux`:
+<img width="815" height="444" alt="task4_partC_1" src="https://github.com/user-attachments/assets/8da7873e-d209-4508-845b-39c32688b12a" />
 
 ### Kernel Modules
 
-> 📸 Screenshot of `lsmod` and `modinfo`:
+> 📸 Screenshot of `lsmod` :
 
-![Kernel Modules](screenshots/task4_modules.png)
+<img width="815" height="444" alt="task4_partC_1" src="https://github.com/user-attachments/assets/8da7873e-d209-4508-845b-39c32688b12a" />
+
+> 📸 Screenshot of `modinfo`:
+
+<img width="809" height="534" alt="task4partC_2" src="https://github.com/user-attachments/assets/840bdba2-903c-4f5c-93d7-9d7e258e14cd" />
+
 
 ### OS Layers Diagram
 
 > 📸 Your diagram of the OS layers, labeled with real data from your system:
 
-![OS Layers Diagram](screenshots/task4_os_layers_diagram.png)
+<img width="337" height="335" alt="task4_partD" src="https://github.com/user-attachments/assets/ef6eb88f-7e06-4142-9a0e-5c64ba62bfa0" />
+
 
 ### Questions
 
 1. **What is `/proc`? Is it a real filesystem on disk?**
 
-   > [Your answer]
+   **It's a virtual filesystem — not stored on disk at all. The kernel generates its content dynamically in memory whenever you read from it. It exposes real-time kernel and process information.**
 
 2. **Monolithic kernel vs. microkernel — which type does Linux use?**
 
-   > [Your answer]
+   **Linux uses a monolithic kernel, meaning most OS services (drivers, filesystem, networking) run in kernel space. However it's modular — lsmod shows loadable kernel modules that can be added/removed at runtime without rebooting.**
 
 3. **What memory regions do you see in `/proc/self/maps`?**
 
-   > [Your answer]
+   **Text segment (executable code), data/BSS segment, heap, stack, memory-mapped files (like libc.so), and the vDSO/vsyscall region for fast kernel calls.**
 
 4. **Break down the kernel version string from `uname -a`.**
 
-   > [Your answer]
+   **Format: Linux <hostname> <kernel-version> <build-info> <arch>**
+   **e.g., 6.5.0-26-generic → 6 = major, 5 = minor, 0 = patch, 26-generic = Ubuntu build variant**
 
 5. **How does `/proc` show that the OS is an intermediary between programs and hardware?**
 
-   > [Your answer]
+   **Programs read /proc files using normal system calls (open, read), but the data comes directly from kernel data structures about hardware (CPU, memory, devices). You never touch hardware directly — the kernel mediates everything and exposes it through this interface.**
 
 ---
 
@@ -276,4 +297,6 @@ Screenshot of running on Windows:
 
 What did you learn from this activity? What was the most surprising difference between library functions and system calls?
 
-> [Write your reflection here]
+> I have learnt how to srace ,check kernal ,cpu indo , memory info ,create file using library function and sysytem call directly. learn how to implement cpp using both method to create read write copy files.
+
+>The most surprising difference between library functions and system calls is that they look similar but work in very different ways. Library functions are easy to use and run in user space, while system calls directly communicate with the operating system in kernel space. I was surprised to learn that some library functions, like printf(), actually use system calls inside them to do the real work. This shows that system calls are more powerful, but library functions make programming easier.
