@@ -1,0 +1,20 @@
+  156  ls
+  157  mkdir activity2
+  158  cd activity2/
+  159  mkdir task1\
+  160  ls
+  161  mkdir task1
+  162  cd task1/
+  163  nano forkchild.c
+  164  gcc -o forkchild forkchild.c 
+  165  ./forkchild > result_forkchild.txt 2>&1
+  166  ./forkchild
+  167  ./forkchild > result_forkchild.txt 2>&1
+  168  cat result_forkchild.txt 
+  169  ps -ef --forest | grep forkchild
+  170  ./forkchild
+  171  ps -ef --forest | grep forkchild
+  172  pstree -p $(pgrep -o forkchild)
+  173  ./forkchild > result_forkchild.txt 2>&1
+  174  cat result_forkchild.txt
+  175  history | tail -n 20 > command_used_forkchild.txt
