@@ -10,7 +10,7 @@
 
 Screenshot of running `hello_syscall.c` on Linux:
 
-![Hello syscall](screenshots/hello_sys.png)
+![Hello syscall](screenshots/hello_syscall.png)
 
 Screenshot of running `hello_winapi.c` on Windows (CMD/PowerShell/VS Code):
 
@@ -18,7 +18,7 @@ Screenshot of running `hello_winapi.c` on Windows (CMD/PowerShell/VS Code):
 
 Screenshot of running `copyfilesyscall.c` on Linux:
 
-![Copy file syscall](screenshots/copy_result.png)
+![Copy file syscall](screenshots/copyfilesyscall.png)
 
 ---
 
