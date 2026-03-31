@@ -1,0 +1,20 @@
+  241  echo "--- Challenge 3b: Color scheme ---" >> task3_grub.txt
+  242  grep GRUB_COLOR /etc/default/grub >> task3_grub.txt
+  243  sudo reboot
+  244  cd ~/os-se-p20240013/os-class-activities-p20240013/activity2/
+  245  LS
+  246  ls
+  247  mkdir task2
+  248  ls
+  249  mkdir task3_shm
+  250  cd task3_shm/
+  251  nano shm-producer.c
+  252  ls
+  253  nano shm-producer.c
+  254  nano shm-consumer.c
+  255  gcc -o shm-producer shm-producer.c -lrt
+  256  gcc -o shm-consumer shm-consumer.c -lrt
+  257  ./shm-producer
+  258  ./shm-consumer > result-shm-ipc.txt
+  259  cat result-shm-ipc.txt
+  260  history | tail -n 20 > command_used_shm.txt
