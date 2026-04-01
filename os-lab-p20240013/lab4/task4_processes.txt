@@ -149,3 +149,7 @@ root          34       2  0 22:19 ?        00:00:00  \_ [kauditd]
    6055 T    sleep 1000
     PID STAT CMD
    6055 S    sleep 1000
+--- Challenge Process Management ---
+4a: sleep 100 PID=7731, sleep 200 PID=7732, sleep 300 PID=7733
+4b: Running bash PID(s): 7354
+4c: Highest memory process = firefox, PID=3270, %MEM=15.6
