@@ -1,0 +1,151 @@
+=== Task 4: Process Management ===
+--- Current processes ---
+    PID TTY          TIME CMD
+   2238 ?        00:00:01 systemd
+   2239 ?        00:00:00 (sd-pam)
+   2248 ?        00:00:12 pipewire
+   2249 ?        00:00:00 pipewire
+   2257 ?        00:00:01 snapd-desktop-i
+   2261 ?        00:00:01 wireplumber
+   2263 ?        00:00:00 pipewire-pulse
+   2264 ?        00:00:01 dbus-daemon
+   2269 ?        00:00:00 gnome-keyring-d
+   2307 ?        00:00:00 xdg-document-po
+   2311 ?        00:00:00 xdg-permission-
+   2323 tty2     00:00:00 gdm-wayland-ses
+   2341 tty2     00:00:00 gnome-session-b
+   2396 ?        00:00:00 gcr-ssh-agent
+   2399 ?        00:00:00 gnome-session-c
+   2407 ?        00:00:00 gvfsd
+   2414 ?        00:00:00 gvfsd-fuse
+   2429 ?        00:00:00 gnome-session-b
+   2463 ?        00:04:06 gnome-shell
+   2465 ?        00:00:00 at-spi-bus-laun
+   2477 ?        00:00:00 dbus-daemon
+   2538 ?        00:00:00 at-spi2-registr
+   2563 ?        00:00:00 gnome-shell-cal
+   2578 ?        00:00:00 gjs
+   2579 ?        00:00:00 evolution-sourc
+   2586 ?        00:00:03 ibus-daemon
+   2587 ?        00:00:00 gsd-a11y-settin
+   2588 ?        00:00:00 gsd-color
+   2589 ?        00:00:00 gsd-datetime
+   2590 ?        00:00:00 gsd-housekeepin
+   2591 ?        00:00:00 gsd-keyboard
+   2594 ?        00:00:00 gsd-media-keys
+   2597 ?        00:00:00 gsd-power
+   2598 ?        00:00:00 gsd-print-notif
+   2599 ?        00:00:00 gsd-rfkill
+   2600 ?        00:00:00 gsd-screensaver
+   2602 ?        00:00:00 gsd-sharing
+   2603 ?        00:00:00 gsd-smartcard
+   2609 ?        00:00:00 gsd-sound
+   2610 ?        00:00:00 gsd-wacom
+   2626 ?        00:00:00 gsd-disk-utilit
+   2640 ?        00:00:08 vmtoolsd
+   2662 ?        00:00:00 evolution-alarm
+   2749 ?        00:00:00 gvfs-udisks2-vo
+   2753 ?        00:00:00 gsd-printer
+   2759 ?        00:00:00 ibus-memconf
+   2760 ?        00:00:02 ibus-extension-
+   2768 ?        00:00:00 ibus-portal
+   2817 ?        00:00:00 snapd-desktop-i
+   2859 ?        00:00:00 gvfs-goa-volume
+   2868 ?        00:00:00 goa-daemon
+   2882 ?        00:00:00 goa-identity-se
+   2888 ?        00:00:00 gvfs-afc-volume
+   2895 ?        00:00:00 gvfs-gphoto2-vo
+   2900 ?        00:00:00 gvfs-mtp-volume
+   2939 ?        00:00:00 Xwayland
+   2956 ?        00:00:00 evolution-calen
+   2960 ?        00:00:01 ibus-engine-sim
+   2987 ?        00:00:00 evolution-addre
+   2990 ?        00:00:00 dconf-service
+   3017 ?        00:00:00 gvfsd-trash
+   3018 ?        00:00:00 gvfsd-metadata
+   3072 ?        00:00:00 tracker-miner-f
+   3073 ?        00:00:00 xdg-desktop-por
+   3078 ?        00:00:00 gsd-xsettings
+   3079 ?        00:00:00 gjs
+   3088 ?        00:00:00 xdg-desktop-por
+   3113 ?        00:00:00 xdg-desktop-por
+   3144 ?        00:00:00 ibus-x11
+   3161 ?        00:00:00 mutter-x11-fram
+   3270 ?        00:05:26 firefox
+   3346 ?        00:00:00 crashhelper
+   3414 ?        00:00:00 forkserver
+   3417 ?        00:00:00 Socket Process
+   3452 ?        00:00:07 Privileged Cont
+   3461 ?        00:00:00 RDD Process
+   3504 ?        00:00:01 snap
+   3669 ?        00:00:00 WebExtensions
+   4024 ?        00:00:00 Utility Process
+   4030 ?        00:00:21 Isolated Web Co
+   4038 ?        00:00:05 Isolated Web Co
+   4210 ?        00:03:58 Isolated Web Co
+   4304 ?        00:00:01 Web Content
+   4354 ?        00:00:20 gnome-terminal-
+   4362 pts/0    00:00:00 bash
+   4380 ?        00:00:00 update-notifier
+   5116 ?        00:00:00 gjs
+   5240 ?        00:00:00 Web Content
+   5303 ?        00:00:00 Web Content
+   5829 pts/0    00:00:00 ps
+--- All processes ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.3  23476 14864 ?        Ss   22:19   0:04 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    22:19   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    22:19   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-netns]
+root          10  0.2  0.0      0     0 ?        I    22:19   0:05 [kworker/0:1-events]
+root          11  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/0:0H-kblockd]
+root          12  0.0  0.0      0     0 ?        I    22:19   0:00 [kworker/u512:0-ipv6_addrconf]
+root          13  0.0  0.0      0     0 ?        I<   22:19   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        S    22:19   0:00 [ksoftirqd/0]
+root          15  0.0  0.0      0     0 ?        I    22:19   0:02 [rcu_preempt]
+root          16  0.0  0.0      0     0 ?        S    22:19   0:00 [rcu_exp_par_gp_kthread_worker/1]
+root          17  0.0  0.0      0     0 ?        S    22:19   0:00 [rcu_exp_gp_kthread_worker]
+root          18  0.0  0.0      0     0 ?        S    22:19   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    22:19   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    22:19   0:00 [cpuhp/0]
+--- Process tree ---
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           2       0  0 22:19 ?        00:00:00 [kthreadd]
+root           3       2  0 22:19 ?        00:00:00  \_ [pool_workqueue_release]
+root           4       2  0 22:19 ?        00:00:00  \_ [kworker/R-rcu_gp]
+root           5       2  0 22:19 ?        00:00:00  \_ [kworker/R-sync_wq]
+root           6       2  0 22:19 ?        00:00:00  \_ [kworker/R-kvfree_rcu_reclaim]
+root           7       2  0 22:19 ?        00:00:00  \_ [kworker/R-slub_flushwq]
+root           8       2  0 22:19 ?        00:00:00  \_ [kworker/R-netns]
+root          10       2  0 22:19 ?        00:00:05  \_ [kworker/0:1-events]
+root          11       2  0 22:19 ?        00:00:00  \_ [kworker/0:0H-kblockd]
+root          12       2  0 22:19 ?        00:00:00  \_ [kworker/u512:0-ipv6_addrconf]
+root          13       2  0 22:19 ?        00:00:00  \_ [kworker/R-mm_percpu_wq]
+root          14       2  0 22:19 ?        00:00:00  \_ [ksoftirqd/0]
+root          15       2  0 22:19 ?        00:00:02  \_ [rcu_preempt]
+root          16       2  0 22:19 ?        00:00:00  \_ [rcu_exp_par_gp_kthread_worker/1]
+root          17       2  0 22:19 ?        00:00:00  \_ [rcu_exp_gp_kthread_worker]
+root          18       2  0 22:19 ?        00:00:00  \_ [migration/0]
+root          19       2  0 22:19 ?        00:00:00  \_ [idle_inject/0]
+root          20       2  0 22:19 ?        00:00:00  \_ [cpuhp/0]
+root          21       2  0 22:19 ?        00:00:00  \_ [cpuhp/1]
+root          22       2  0 22:19 ?        00:00:00  \_ [idle_inject/1]
+root          23       2  0 22:19 ?        00:00:02  \_ [migration/1]
+root          24       2  0 22:19 ?        00:00:00  \_ [ksoftirqd/1]
+root          27       2  0 22:19 ?        00:00:03  \_ [kworker/u513:0-events_power_efficient]
+root          29       2  0 22:19 ?        00:00:00  \_ [kdevtmpfs]
+root          30       2  0 22:19 ?        00:00:00  \_ [kworker/R-inet_frag_wq]
+root          31       2  0 22:19 ?        00:00:00  \_ [rcu_tasks_kthread]
+root          32       2  0 22:19 ?        00:00:00  \_ [rcu_tasks_rude_kthread]
+root          33       2  0 22:19 ?        00:00:00  \_ [rcu_tasks_trace_kthread]
+root          34       2  0 22:19 ?        00:00:00  \_ [kauditd]
+[1]-  6048 Running                 sleep 300 &
+[2]+  6049 Running                 sleep 500 &
+    PID STAT CMD
+   6055 T    sleep 1000
+    PID STAT CMD
+   6055 S    sleep 1000
