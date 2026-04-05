@@ -75,3 +75,4 @@ lrwxrwxrwx   1 root root    45 Feb 25  2025 default.plymouth -> /usr/share/plymo
 lrwxrwxrwx   1 root root    22 Apr  8  2024 ebtables -> /usr/sbin/ebtables-nft
 lrwxrwxrwx   1 root root    30 Apr  8  2024 ebtables-restore -> /usr/sbin/ebtables-nft-restore
 lrwxrwxrwx   1 root root    27 Apr  8  2024 ebtables-save -> /usr/sbin/ebtables-nft-save
+index.html

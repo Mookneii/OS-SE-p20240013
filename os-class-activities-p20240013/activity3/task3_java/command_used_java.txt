@@ -1,0 +1,30 @@
+  585  ./threads_mutex > result_threads_mutex.txt 2>&1
+  586  cat result_threads_mutex.txt
+  587  history | tail -n 20 > command_used_threads.txt
+  588  $ history | tail -n 20 > command_used_threads.txt
+  589  cd ..
+  590  task3_java
+  591  mkdir task3_java
+  592  cd task3_java/
+  593  nano ThreadDemo.java
+  594  javac ThreadDemo.java
+  595  sudo apt update
+  596  sudo apt install default-jdk
+  597  javac -version
+  598  java -version
+  599  javac ThreadDemo.java
+  600  ls
+  601  java ThreadDemo 
+  602  java ThreadDemo > result_thread_demo.txt 2>&1
+  603  cat result_thread_demo.txt
+  604  nano RunnableDemo.java 
+  605  javac RunnableDemo.java
+  606  java RunnableDemo 
+  607  java RunnableDemo > result_runnable_demo.txt 2>&1
+  608  cat result_runnable_demo.txt
+  609  nano PoolDemo.java
+  610  javac PoolDemo.java
+  611  java PoolDemo 
+  612  java PoolDemo > result_pool_demo.txt 2>&1
+  613  cat result_pool_demo.txt
+  614  history | tail -n 30 > command_used_java.txt

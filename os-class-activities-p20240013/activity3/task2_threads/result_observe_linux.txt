@@ -1,0 +1,18 @@
+mony        8831    4604    8831  0    5 16:14 pts/0    00:00:00 ./threads_observe
+mony        8831    4604    8832  0    5 16:14 pts/0    00:00:00 ./threads_observe
+mony        8831    4604    8833  0    5 16:14 pts/0    00:00:00 ./threads_observe
+mony        8831    4604    8834  0    5 16:14 pts/0    00:00:00 ./threads_observe
+mony        8831    4604    8835  0    5 16:14 pts/0    00:00:00 ./threads_observe
+mony        8842    8679    8842  0    1 16:14 pts/1    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+   8831    8831 pts/0    00:00:00 threads_observe
+   8831    8832 pts/0    00:00:00 threads_observe
+   8831    8833 pts/0    00:00:00 threads_observe
+   8831    8834 pts/0    00:00:00 threads_observe
+   8831    8835 pts/0    00:00:00 threads_observe
+--- /proc task ---
+8831
+8832
+8833
+8834
+8835

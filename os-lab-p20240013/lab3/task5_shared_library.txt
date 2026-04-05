@@ -1,0 +1,66 @@
+=== Task 5: Build and Register a Shared Library ===
+--- API Design (header file) ---
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+
+#endif
+
+--- Partner A: Compiled shared library ---
+libtechcorp_sysinfo.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=60f8bb6c6929618e9fac744d84d757ebe059d6b4, not stripped
+-rwxrwxr-x 1 mony mony 16048 Apr  5 22:58 libtechcorp_sysinfo.so
+
+--- Partner B: Test program written ---
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("===================================\n");
+    return 0;
+}
+
+--- Integration: ldd on test program (before install) ---
+	linux-vdso.so.1 (0x0000726026a4d000)
+	libtechcorp_sysinfo.so => not found
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000726026800000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000726026a4f000)
+
+--- Integration: Test run (using LD_LIBRARY_PATH) ---
+=== TechCorp System Info Report ===
+Hostname : mony-VMware-Virtual-Platform
+Uptime   : 0 hours, 30 minutes
+CPU Cores: 2
+===================================
+
+--- Phase 4: Partner B recompiled library with new function ---
+libtechcorp_sysinfo.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1c33d6a9382bf8d0a5efe5abb6fcb6460c1577b8, not stripped
+
+--- Phase 4: v2 test run ---
+=== TechCorp System Info Report v2 ===
+Hostname : mony-VMware-Virtual-Platform
+Uptime   : 0 hours, 31 minutes
+CPU Cores: 2
+Memory   : 3867 MB
+======================================
+
+--- System-wide install: ldconfig cache ---
+	libtechcorp_sysinfo.so (libc6,x86-64) => /usr/local/lib/libtechcorp_sysinfo.so
+
+--- System-wide test (no LD_LIBRARY_PATH) ---
+	linux-vdso.so.1 (0x00007ec1419b8000)
+	libtechcorp_sysinfo.so => /usr/local/lib/libtechcorp_sysinfo.so (0x00007ec141997000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ec141600000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007ec1419ba000)
+=== TechCorp System Info Report v2 ===
+Hostname : mony-VMware-Virtual-Platform
+Uptime   : 0 hours, 32 minutes
+CPU Cores: 2
+Memory   : 3867 MB
+======================================
