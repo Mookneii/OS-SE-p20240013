@@ -1,0 +1,100 @@
+  667  LD_LIBRARY_PATH=. ./sysinfo_test >> ../task5_shared_library.txt
+  668  cat > techcorp_sysinfo.h << 'EOF'
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+long tc_get_memory_mb(void);
+
+#endif
+EOF
+
+  669  cat > techcorp_memory.c << 'EOF'
+#include "techcorp_sysinfo.h"
+#include <stdio.h>
+
+long tc_get_memory_mb(void) {
+    FILE *fp = fopen("/proc/meminfo", "r");
+    if (fp) {
+        long mem_kb = 0;
+        if (fscanf(fp, "MemTotal: %ld kB", &mem_kb) == 1) {
+            fclose(fp);
+            return mem_kb / 1024;
+        }
+        fclose(fp);
+    }
+    return -1;
+}
+EOF
+
+  670  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  671  gcc -fPIC -c techcorp_memory.c -o techcorp_memory.o
+  672  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o techcorp_memory.o
+  673  echo "" >> ../task5_shared_library.txt
+  674  echo "--- Phase 4: Partner B recompiled library with new function ---" >> ../task5_shared_library.txt
+  675  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  676  cat > sysinfo_test_v2.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report v2 ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+EOF
+
+  677  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+  678  echo "" >> ../task5_shared_library.txt
+  679  echo "--- Phase 4: v2 test run ---" >> ../task5_shared_library.txt
+  680  LD_LIBRARY_PATH=. ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  681  sudo cp libtechcorp_sysinfo.so /usr/local/lib/
+  682  sudo ldconfig
+  683  echo "" >> ../task5_shared_library.txt
+  684  echo "--- System-wide install: ldconfig cache ---" >> ../task5_shared_library.txt
+  685  ldconfig -p | grep techcorp >> ../task5_shared_library.txt
+  686  echo "" >> ../task5_shared_library.txt
+  687  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  688  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  689  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  690  ldconfig -p | grep techcorp
+  691  ldd ./sysinfo_test_v2
+  692  ./sysinfo_test_v2
+  693  nano techcorp_sysinfo.h 
+  694  ldconfig -p | grep techcorp
+  695  cls
+  696  clear
+  697  ldconfig -p | grep techcorp
+  698  history | tail -n 100
+  699  cd ..
+  700  cd links_lab/
+  701  echo "Shared resource across departments" > shared_data.txt
+  702  ln shared_data.txt hr_data.txt
+  703  ln shared_data.txt eng_data.txt
+  704  ls -li shared_data.txt hr_data.txt eng_data.txt
+  705  cd ..
+  706  ln -s links_lab/projects/frontend quick_access
+  707  ls quick_access
+  708  ls quick_access >> task2_links.txt
+  709  cd links_lab
+  710  cat hr_data.txt
+  711  cat eng_data.txt
+  712  ls -li hr_data.txt eng_data.txt
+  713  cd ..
+  714  cd..
+  715  cd
+  716  cd ~/os-se-p20240013/
+  717  git add .
+  718  git commit -m "finish lab3"
+  719  git push origin master
+  720  history | tail -n 100 > task_history.txt
+  721  ls
+  722  rm task_history.txt 
+  723  cd os-lab-p20240013/lab3/
+  724  history | tail -n 100 > task_history.txt
