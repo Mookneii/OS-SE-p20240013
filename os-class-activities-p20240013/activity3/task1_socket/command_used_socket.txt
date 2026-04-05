@@ -1,0 +1,20 @@
+  541  sudo reboot
+  542  sudo grep -E 'menu_color|color_normal|color_highlight' /boot/grub/grub.cfg
+  543  sudo nano /boot/grub/grub.cfg
+  544  sudo grep -E 'menu_color|color_normal|color_highlight' /boot/grub/grub.cfg
+  545  sudo reboot
+  546  cd ~/os-se-p20240013/os-class-activities-p20240013/
+  547  ls
+  548  mkdir activity3
+  549  cd activity3/
+  550  mkdir task1_socket
+  551  cd task1_socket/
+  552  nano server.c
+  553  nano client.c
+  554  gcc -o server server.c 
+  555  gcc -o client client.c 
+  556  ./server 
+  557  ./server > result_server.txt 2>&1 &
+  558  sleep 1
+  559  cat result_server.txt result_client.txt > result_socket.txt
+  560  history | tail -n 20 > command_used_socket.txt
