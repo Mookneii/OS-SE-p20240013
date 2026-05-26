@@ -1,0 +1,6 @@
+=== broadcaster script ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 335 May 26 14:24 /home/se-mi-sorakmony/bin/broadcaster
+=== outbox permissions ===
+drwxr-xr-x 2 se-mi-sorakmony se-mi-sorakmony 4096 May 26 14:24 /home/se-mi-sorakmony/public_outbox
+=== secret.txt ===
+semaphore - 2026-05-26 14:24:43

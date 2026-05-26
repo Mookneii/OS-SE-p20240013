@@ -56,3 +56,33 @@ cat commands.txt
 cat final_answer.txt 
 cd ..
 git add .
+git commit -m"lab4 challlenge"
+git config --global user.email "monyjk576@gmail.com"
+git config --global user.name "Mookneii"
+git add .
+git commit -m "challenge"
+git push origin master 
+git pull origin master
+git pull origin master --rebase
+git pull origin master 
+git pull --no-rebase origin master
+cd os-lab-p20240013/lab3/
+ls
+cd images/
+ls
+cd
+git pull origin master
+git pull --no-rebase origin master
+git push origin master 
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/id_ed25519' --prune-empty --tag-name-filter cat -- --all
+git push origin master --force
+ls
+exit
+htop
+ls
+cd ~
+cd home
+exit
+git pull origin master 
+git pull --no-rebase origin master
+exit

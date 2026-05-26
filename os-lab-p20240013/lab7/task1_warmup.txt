@@ -1,0 +1,5 @@
+=== warmup permissions ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 76 May 26 13:59 /home/se-mi-sorakmony/bin/warmup
+=== warmup output ===
+Hello from my first script! My current directory is:
+/home/se-mi-sorakmony/os-lab-p20240013/lab7

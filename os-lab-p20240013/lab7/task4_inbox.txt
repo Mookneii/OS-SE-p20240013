@@ -1,0 +1,5 @@
+=== inbox permissions ===
+drwx-wx-wx 2 se-mi-sorakmony se-mi-sorakmony 4096 May 26 14:19 /home/se-mi-sorakmony/public_inbox
+=== inbox files as owner ===
+total 0
+-rw-rw-r-- 1 se-pav-ratana se-pav-ratana 0 May 26 14:19 test_from_se-pav-ratana.txt

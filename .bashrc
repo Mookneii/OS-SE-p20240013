@@ -115,3 +115,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export PATH="$HOME/bin:$PATH"
+# Lab 7 doorstep message
+users_online=$(who | wc -l)
+uptime_info=$(uptime -p)
+
+jokes=("Keep calm and check the logs." "There is no place like 127.0.0.1." "Automate the boring stuff.")
+
+joke=${jokes[$RANDOM % ${#jokes[@]}]}
+
+echo "========================================"
+echo "Welcome, $USER"
+echo "Users currently logged in: $users_online"
+echo "Server uptime: $uptime_info"
+echo "Random tech quote: $joke"
+echo "========================================"
