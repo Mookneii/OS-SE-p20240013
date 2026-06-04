@@ -1,7 +1,7 @@
 # Class Activity 6 - Deadlock Simulation
 
-* **Student Name:** [Your Name]
-* **Student ID:** [Your ID]
+* **Student Name:** MI Sorakmony
+* **Student ID:** p20240013
 * **Programming Language Used:** Java
 
 ---
