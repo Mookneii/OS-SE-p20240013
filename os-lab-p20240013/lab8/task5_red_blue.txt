@@ -1,0 +1,4 @@
+=== public api permissions ===
+drwxr-x--x 14 se-mi-sorakmony se-mi-sorakmony 4096 May 28 13:03 /home/se-mi-sorakmony
+=== inventory ===
+=== red team sales evidence ===

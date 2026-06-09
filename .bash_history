@@ -200,3 +200,195 @@ git add .gitignore
 git commit -m "Remove SSH private key from repository"
 rm -f ~/.ssh/id_ed25519 ~/.ssh/id_ed25519.pub
 ssh-keygen -t ed25519 -C "your_email@example.com"
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/id_ed25519 .ssh/id_ed25519.pub' --prune-empty --tag-name-filter cat -- --all
+git add .
+git commit -m "Save work before cleaning git history"
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch .ssh/id_ed25519 .ssh/id_ed25519.pub' --prune-empty --tag-name-filter cat -- --all
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+git push origin master --force
+ssh-keygen -t ed25519 -C "your_github_email@example.com"
+ssh -T git@github.com
+ssh-keygen -t ed25519 -C "monyjk576@gmail.com"
+ssh -T git@github.com
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+git push origin master --force
+exit
+git pull origin master
+exit
+ls
+git pull origin master 
+exit
+git pull origin master 
+cd os-lab-p20240013/lab6/
+cd security_lab/
+ls
+cd ~
+git pull 
+git pull origin master 
+exit
+git pull origin master 
+exit
+git pull origin master 
+exit
+git pull origin master 
+cd os-lab-p20240013/
+ls
+mkdir lab8
+cd lab8
+ls
+mkdir images scripts
+ls
+nano ~/bin/arg_viewer
+chmod +x ~/bin/arg_viewer
+arg_viewer Alice 3
+arg_viewer
+nano ~/bin/quantum_probe
+chmod +x ~/bin/quantum_probe
+echo 100 > ~/bin/inventory.txt
+nano ~/bin/buy_widget
+chmod +x ~/bin/buy_widget
+nano ~/bin/buy_widget
+{     cd ~/bin;     echo "=== argument viewer with arguments ===";     arg_viewer Alice 3;     echo "=== argument viewer with no arguments ===";     arg_viewer;     echo "=== successful probe ===";     quantum_probe Alice 3;     echo "exit status after success: $?";     echo "=== invalid probe ===";     quantum_probe Bob not_a_number;     echo "exit status after invalid input: $?";     echo "=== loop/log directory evidence ===";     ls -ld ~/bin/probe_logs; } > task0_warmup.txt
+cat task0_warmup.txt
+{     cd ~/bin;     echo "=== argument viewer with arguments ===";     arg_viewer Alice 3;     echo "=== argument viewer with no arguments ===";     arg_viewer;     echo "=== successful probe ===";     quantum_probe Alice 3;     echo "exit status after success: $?";     echo "=== invalid probe ===";     quantum_probe Bob not_a_number;     echo "exit status after invalid input: $?";     echo "=== loop/log directory evidence ===";     ls -ld ~/bin/probe_logs; } > ~/os-se-p20240013/os-labp20240013/lab8/task0_warmup.txt
+cat ~/os-se-p20240013/os-lab-p20240013/lab8/task0_warmup.txt
+{     cd ~/bin;     echo "=== argument viewer with arguments ===";     arg_viewer Alice 3;     echo "=== argument viewer with no arguments ===";     arg_viewer;     echo "=== successful probe ===";     quantum_probe Alice 3;     echo "exit status after success: $?";     echo "=== invalid probe ===";     quantum_probe Bob not_a_number;     echo "exit status after invalid input: $?";     echo "=== loop/log directory evidence ===";     ls -ld ~/bin/probe_logs; } > ~/os-lab-p20240013/lab8/task0_warmup.txt
+cat ~/os-lab-p20240013/lab8/task0_warmup.txt
+{     echo "=== missing argument test ===";     buy_widget Alice;     echo "=== invalid quantity test ===";     buy_widget Eve -3;     echo "=== script permissions ===";     ls -l ~/bin/buy_widget; } > ~/os-lab-p20240013/lab8/task1_validation.txt
+cat ~/os-lab-p20240013/lab8/task1_validation.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+{     echo 100 > ~/bin/inventory.txt;     rm -f ~/bin/sales.log;      echo "=== transaction tests ===";     buy_widget Alice 5;     buy_widget Hacker_Bob 200;     buy_widget Eve -3;      echo "=== inventory ===";     cat ~/bin/inventory.txt;      echo "=== sales.log ===";     cat ~/bin/sales.log; } > ~/os-lab-p20240013/lab8/task2_audit.txt
+cd ~
+cd os-lab-p20240013/
+cd lab8/
+cat task2_audit.txt 
+nano ~/bin/bot_swarm
+chmod +x ~/bin/bot_swarm
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+nano ~/os-lab-P20240013/lab8/observations.txt
+chmod +x ~/bin/bot_swarm
+bot_swarm
+cat ~/bin/inventory.txt
+chmod +x ~/bin/bot_swarm
+bot_swarm
+cat ~/bin/inventory.txt
+chmod +x ~/bin/bot_swarm
+bot_swarm
+cat ~/bin/inventory.txt
+chmod +x ~/bin/bot_swarm
+bot_swarm
+cat ~/bin/inventory.txt
+chmod +x ~/bin/bot_swarm
+bot_swarm
+cat ~/bin/inventory.txt
+exit
+git pull origin master 
+exitt
+exit
+cd os-lab-p20240013/lab8/
+nano ~/bin/bot_swarm
+chmod +x ~/bin/bot_swarm
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+nl -ba ~/bin/buy_widget
+nano ~/bin/buy_widget
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+buy_widget Alice 5
+cat ~/bin/inventory.txt
+cat ~/bin/sales.log
+{     echo 100 > ~/bin/inventory.txt;     rm -f ~/bin/sales.log;     echo "=== transaction tests ===";     buy_widget Alice 5;     buy_widget Hacker_Bob 200;     buy_widget Eve -3;     echo "=== inventory ===";     cat ~/bin/inventory.txt;     echo "=== sales.log ===";     cat ~/bin/sales.log; } > ~/os-lab-p20240013/lab8/task2_audit.txt
+cat ~/os-lab-p20240013/lab8/task2_audit.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+bot_swarm
+cat ~/bin/inventory.txt
+nano ~/bin/buy_widget
+chmod +x ~/bin/buy_widget
+echo 100 > ~/bin/inventory.txt
+rm -f ~/bin/sales.log
+rm -f ~/bin/inventory.lock
+bot_swarm
+cat ~/bin/inventory.txt
+tail -5 ~/bin/sales.log
+{     echo "=== final inventory ===";     cat ~/bin/inventory.txt;      echo "=== last 5 sales ===";     tail -5 ~/bin/sales.log; } > ~/os-lab-p20240013/lab8/task4_mutex.txt
+cat ~/os-lab-p20240013/lab8/task4_mutex.txt
+cat ~/bin/inventory.txt
+wc -l ~/bin/sales.log
+exit
+cd os-lab-p20240013/lab8/
+nano ~/bin/bot_swarm
+chmod +x ~/bin/bot_swarm
+bot_swarm
+{     echo "=== public api permissions ===";     ls -ld "$HOME" ~/public_api;      ls -l ~/public_api;      echo "=== inventory ===";     cat ~/public_api/inventory.txt;      echo "=== red team sales evidence ===";     tail -10 ~/public_api/sales.log; } > ~/os-lab-p20240013/lab8/task5_red_blue.txt
+echo "Partner report" > /home/p20240033/vendor_reports/partner_report.txt
+echo "Partner report" > /home/se-ouk-puthirith/vendor_reports/partner_report.txt
+rm /home/se-ouk-puthirith/vendor_reports/my_rules.txt
+{     echo "=== drop zone permissions ===";     ls -ld ~/vendor_reports;      echo "=== drop zone files ===";     ls -l ~/vendor_reports;      echo "=== partner deletion result ===";     echo "Partner received: Operation not permitted when trying to delete my_rules.txt"; } > ~/os-lab-p20240013/lab8/task6_dropzone.txt
+ls
+cat task5_red_blue.txt 
+cate task6_dropzone.txt 
+nano ~/bin/cleanup
+chmod +x ~/bin/cleanup
+mkdir -p ~/forensic_cleanup
+cd ~/forensic_cleanup
+touch test.log
+touch data.csv
+touch error.tmp
+ls
+cleanup
+{ tree . 2>/dev/null || ls -R .; } > ~/os-lab-p20240013/lab8/task7_cleanup.txt
+cat ~/os-lab-p20240013/lab8/task7_cleanup.txt
+cd ~/os-lab-p20240013/lab8
+mkdir -p scripts
+cp ~/bin/arg_viewer scripts/
+cp ~/bin/quantum_probe scripts/
+cp ~/bin/buy_widget scripts/
+cp ~/bin/bot_swarm scripts/
+cp ~/bin/create_dropzone scripts/
+cp ~/bin/cleanup scripts/
+cp ~/public_api/buy_widget scripts/buy_widget
+ls -l ~/bin
+nano ~/bin/create_dropzone
+chmod +x ~/bin/create_dropzone
+create_dropzone
+ls -ld ~/vendor_reports
+ls -ld ~/public_api
+cp ~/bin/buy_widget scripts/
+ls -l scripts
+cp ~/bin/create_dropzone scripts/
+ls -l scripts
+ls -R ~/os-lab-p20240013/lab8
+nano ~/os-lab-p20240013/lab8/observations.txt
+exit

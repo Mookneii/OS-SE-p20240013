@@ -1,0 +1,10 @@
+Run 1 final inventory: 84
+Run 2 final inventory: 82
+Run 3 final inventory: 86
+Run 4 final inventory: 80
+Run 5 final inventory: 88
+
+Explanation:
+Before the patch, multiple buy_widget processes read inventory.txt at the same time.
+Several processes calculated new inventory values using outdated data and overwrote each other's updates.
+Because process scheduling changes every run, the final inventory value was inconsistent and often incorrect.

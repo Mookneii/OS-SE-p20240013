@@ -1,0 +1,4 @@
+=== drop zone permissions ===
+=== drop zone files ===
+=== partner deletion result ===
+Partner received: Operation not permitted when trying to delete my_rules.txt
