@@ -1,0 +1,27 @@
+=== backup script permissions ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 731 Jun 16 13:29 /home/se-mi-sorakmony/bin/backup_project
+=== archives kept (should be 3) ===
+/home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133029.tar.gz
+/home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133019.tar.gz
+/home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133018.tar.gz
+=== backup log ===
+2026-06-16 13:30:16 | starting backup of /home/se-mi-sorakmony/os-lab-automation/project
+2026-06-16 13:30:16 | created archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133016.tar.gz
+2026-06-16 13:30:16 | no old archives to prune
+2026-06-16 13:30:16 | backup finished successfully
+2026-06-16 13:30:17 | starting backup of /home/se-mi-sorakmony/os-lab-automation/project
+2026-06-16 13:30:17 | created archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133017.tar.gz
+2026-06-16 13:30:17 | no old archives to prune
+2026-06-16 13:30:17 | backup finished successfully
+2026-06-16 13:30:18 | starting backup of /home/se-mi-sorakmony/os-lab-automation/project
+2026-06-16 13:30:18 | created archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133018.tar.gz
+2026-06-16 13:30:18 | no old archives to prune
+2026-06-16 13:30:18 | backup finished successfully
+2026-06-16 13:30:19 | starting backup of /home/se-mi-sorakmony/os-lab-automation/project
+2026-06-16 13:30:19 | created archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133019.tar.gz
+2026-06-16 13:30:19 | pruned old archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133016.tar.gz
+2026-06-16 13:30:19 | backup finished successfully
+2026-06-16 13:30:29 | starting backup of /home/se-mi-sorakmony/os-lab-automation/project
+2026-06-16 13:30:29 | created archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133029.tar.gz
+2026-06-16 13:30:29 | pruned old archive /home/se-mi-sorakmony/os-lab-automation/backups/project_20260616_133017.tar.gz
+2026-06-16 13:30:29 | backup finished successfully

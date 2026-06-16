@@ -1,0 +1,11 @@
+=== script permissions ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 405 Jun 16 13:21 /home/se-mi-sorakmony/bin/automation_demo
+=== log contents ===
+2026-06-16 13:21:56 | automation_demo started by user se-mi-sorakmony
+2026-06-16 13:21:56 | working directory is /home/se-mi-sorakmony/os-lab-p20240013/lab10
+2026-06-16 13:21:56 | home directory is /home/se-mi-sorakmony
+2026-06-16 13:21:56 | automation_demo finished successfully
+2026-06-16 13:21:56 | automation_demo started by user se-mi-sorakmony
+2026-06-16 13:21:56 | working directory is /home/se-mi-sorakmony/os-lab-p20240013/lab10
+2026-06-16 13:21:56 | home directory is /home/se-mi-sorakmony
+2026-06-16 13:21:56 | automation_demo finished successfully
