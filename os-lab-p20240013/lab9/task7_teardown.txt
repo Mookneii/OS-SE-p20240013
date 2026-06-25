@@ -1,0 +1,14 @@
+=== teardown script ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 334 Jun 25 16:45 /home/se-mi-sorakmony/bin/teardown
+=== process check ===
+No sync processes found.
+=== final working folder ===
+/home/se-mi-sorakmony/os-lab-deadlock
+/home/se-mi-sorakmony/os-lab-deadlock/public_dr_alpha
+/home/se-mi-sorakmony/os-lab-deadlock/public_dr_alpha/vault.lock
+/home/se-mi-sorakmony/os-lab-deadlock/vault_alpha
+/home/se-mi-sorakmony/os-lab-deadlock/vault_alpha/README.txt
+/home/se-mi-sorakmony/os-lab-deadlock/vault_alpha/vault.lock
+/home/se-mi-sorakmony/os-lab-deadlock/vault_beta
+/home/se-mi-sorakmony/os-lab-deadlock/vault_beta/README.txt
+/home/se-mi-sorakmony/os-lab-deadlock/vault_beta/vault.lock

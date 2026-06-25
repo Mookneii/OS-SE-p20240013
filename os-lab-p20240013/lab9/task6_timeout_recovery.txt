@@ -1,0 +1,6 @@
+=== sync_timeout permissions ===
+-rwxrwxr-x 1 se-mi-sorakmony se-mi-sorakmony 585 Jun 25 16:40 /home/se-mi-sorakmony/bin/sync_timeout
+=== timeout evidence ===
+ERROR: could not lock Vault Beta within 5 seconds
+exit status: 2
+=== process check after stopping old script ===

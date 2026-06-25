@@ -1,0 +1,11 @@
+=== working folder ===
+/home/se-mi-sorakmony/os-lab-p20240013/lab9
+=== vault directories ===
+drwxrwxr-x 2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 25 16:45 /home/se-mi-sorakmony/os-lab-deadlock/vault_alpha
+drwxrwxr-x 2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 25 16:45 /home/se-mi-sorakmony/os-lab-deadlock/vault_beta
+=== vault lock files ===
+-rw-rw-r-- 1 se-mi-sorakmony se-mi-sorakmony 0 Jun 25 16:42 /home/se-mi-sorakmony/os-lab-deadlock/vault_alpha/vault.lock
+-rw-rw-r-- 1 se-mi-sorakmony se-mi-sorakmony 0 Jun 25 16:42 /home/se-mi-sorakmony/os-lab-deadlock/vault_beta/vault.lock
+=== vault marker files ===
+Vault Alpha local resource for p20240013
+Vault Beta local resource for p20240013

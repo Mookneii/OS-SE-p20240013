@@ -1,0 +1,7 @@
+=== running sync processes ===
+se-mi-s+  354235  0.0  0.0   7340  3640 pts/0    S+   23:12   0:00 /bin/bash /home/se-mi-sorakmony/bin/sync_up
+se-mi-s+  354238  0.0  0.0   7340  3624 pts/1    S+   23:12   0:00 /bin/bash /home/se-mi-sorakmony/bin/sync_down
+=== explanation ===
+sync_up holds Alpha and waits for Beta.
+sync_down holds Beta and waits for Alpha.
+This is circular wait, so neither script can continue.

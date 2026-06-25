@@ -1,0 +1,10 @@
+=== public DR permissions ===
+drwxr-x--x 18 se-mi-sorakmony se-mi-sorakmony 4096 Jun 21 23:03 /home/se-mi-sorakmony
+drwxrwxr-x  5 se-mi-sorakmony se-mi-sorakmony 4096 Jun 25 15:47 /home/se-mi-sorakmony/os-lab-deadlock
+drwxr-xr-x  2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 25 15:47 /home/se-mi-sorakmony/os-lab-deadlock/public_dr_alpha
+total 0
+-rw-rw-rw- 1 se-mi-sorakmony se-mi-sorakmony 0 Jun 25 16:01 vault.lock
+=== running cross sync processes ===
+=== partner role ===
+Partner username: <se-chin-menghong>
+My role: Player A
