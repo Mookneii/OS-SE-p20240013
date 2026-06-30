@@ -1,0 +1,7 @@
+Reading /home/se-mi-sorakmony/final-exam/partC_scripting/sample/dir1/file1.txt
+TechCorp
+
+Reading /home/se-mi-sorakmony/final-exam/partC_scripting/sample/dir2/file2.txt
+Reactor Core
+
+Skipping /home/se-mi-sorakmony/final-exam/partC_scripting/sample/dir3/file3.txt

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BASE_DIR="$HOME/final-exam/partD_secure/data"
+
+echo 150 > "$BASE_DIR/stock.txt"
+> "$BASE_DIR/sales.log"
+
+for i in $(seq 1 50)
+do
+    buy_reactor_core "Buyer$i" 1 &
+done
+
+wait
+
+echo "Final Stock:"
+cat "$BASE_DIR/stock.txt"

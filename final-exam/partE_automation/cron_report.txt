@@ -1,0 +1,22 @@
+===== Current Crontab =====
+# Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16
+30 14 16 6 * /home/se-mi-sorakmony/bin/lab_session_job >> /home/se-mi-sorakmony/os-lab-automation/logs/cron_session_job.log 2>&1
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22
+30 14 22 6 * /home/se-mi-sorakmony/bin/deadline_job >> /home/se-mi-sorakmony/os-lab-automation/logs/cron_deadline_job.log 2>&1
+
+* * * * * /home/se-mi-sorakmony/bin/timed_job /home/se-mi-sorakmony/final-exam/partE_automation/logs/cron_recurring.log
+
+35 14 * * * /home/se-mi-sorakmony/bin/timed_job /home/se-mi-sorakmony/final-exam/partE_automation/logs/cron_oneshot.log
+*/2 * * * * /home/se-mi-sorakmony/bin/backup_exam
+
+0 16 * * * /home/se-mi-sorakmony/bin/backup_exam
+
+===== Recurring Log =====
+Tue Jun 30 02:30:01 PM +07 2026 : Timed job executed
+
+===== One-shot Log =====
+
+===== Exam Backups =====
+total 32
+-rw-rw-r-- 1 se-mi-sorakmony se-mi-sorakmony 13101 Jun 30 14:29 final-exam-20260630_142950.tar.gz
+-rw-rw-r-- 1 se-mi-sorakmony se-mi-sorakmony 13154 Jun 30 14:30 final-exam-20260630_143001.tar.gz

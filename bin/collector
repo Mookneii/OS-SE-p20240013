@@ -1,0 +1,24 @@
+#!/bin/bash
+
+REPORT="$HOME/final-exam/partC_scripting/report.txt"
+
+> "$REPORT"
+
+FILES=(
+"$HOME/final-exam/partC_scripting/sample/dir1/file1.txt"
+"$HOME/final-exam/partC_scripting/sample/dir2/file2.txt"
+"$HOME/final-exam/partC_scripting/sample/dir3/file3.txt"
+)
+
+for FILE in "${FILES[@]}"
+do
+    if [ -e "$FILE" ] && [ -r "$FILE" ]; then
+        echo "Reading $FILE" >> "$REPORT"
+        cat "$FILE" >> "$REPORT"
+        echo "" >> "$REPORT"
+    else
+        echo "Skipping $FILE" >> "$REPORT"
+    fi
+done
+
+echo "Report saved to $REPORT"

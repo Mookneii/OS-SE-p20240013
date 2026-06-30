@@ -1,0 +1,19 @@
+=== ls -l ===
+total 12
+drwxrwxr-x 2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 30 13:36 images
+-rw-rw-r-- 1 se-mi-sorakmony se-mi-sorakmony   14 Jun 30 14:02 perm_report.txt
+-rw------- 1 se-mi-sorakmony se-mi-sorakmony    0 Jun 30 14:01 private.txt
+drwx--x--x 2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 30 14:01 shared
+
+=== ls -ld ===
+drwx--x--x 2 se-mi-sorakmony se-mi-sorakmony 4096 Jun 30 14:01 shared
+
+=== stat private.txt ===
+  File: private.txt
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 252,0	Inode: 47448186    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1131/se-mi-sorakmony)   Gid: ( 1133/se-mi-sorakmony)
+Access: 2026-06-30 14:01:12.510190539 +0700
+Modify: 2026-06-30 14:01:12.510190539 +0700
+Change: 2026-06-30 14:01:35.508032092 +0700
+ Birth: 2026-06-30 14:01:12.510190539 +0700

@@ -1,0 +1,17 @@
+Before applying flock:
+
+Run 1: 149
+Run 2: 149
+Run 3: 149
+
+Reason:
+Multiple processes read the stock value (150) at the same time before any process wrote the updated value back. This caused lost updates, so the final stock remained higher than the correct value.
+
+After applying flock:
+
+Run 1: 100
+Run 2: 100
+Run 3: 100
+
+Reason:
+The flock command provided an exclusive lock on the critical section. Only one process could read and update the stock file at a time, preventing lost updates. As a result, every run ended with the correct final stock of 100.

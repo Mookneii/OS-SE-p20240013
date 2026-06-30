@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p "$HOME/exam-backups"
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+tar -czf "$HOME/exam-backups/final-exam-$TIMESTAMP.tar.gz" \
+    -C "$HOME" final-exam
+
+echo "Backup created"

@@ -130,3 +130,4 @@ echo "Users currently logged in: $users_online"
 echo "Server uptime: $uptime_info"
 echo "Random tech quote: $joke"
 echo "========================================"
+export PATH=$HOME/bin:$PATH

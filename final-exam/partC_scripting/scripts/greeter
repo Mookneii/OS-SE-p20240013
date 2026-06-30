@@ -1,0 +1,22 @@
+#!/bin/bash
+
+USER_NAME=$(whoami)
+LOGGED_IN=$(who | wc -l)
+UPTIME=$(uptime -p)
+
+MESSAGES=(
+"Welcome to TechCorp!"
+"Have a productive day!"
+"Good luck on your OS exam!"
+)
+
+RANDOM_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
+
+echo "=============================="
+echo "TechCorp System Greeter"
+echo "=============================="
+echo "User          : $USER_NAME"
+echo "Logged-in     : $LOGGED_IN"
+echo "System Uptime : $UPTIME"
+echo
+echo "$RANDOM_MSG"

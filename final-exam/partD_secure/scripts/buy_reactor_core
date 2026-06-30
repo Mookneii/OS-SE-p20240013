@@ -1,0 +1,43 @@
+#!/bin/bash
+
+BASE_DIR="$HOME/final-exam/partD_secure/data"
+
+STOCK_FILE="$BASE_DIR/stock.txt"
+LOG_FILE="$BASE_DIR/sales.log"
+LOCK_FILE="$BASE_DIR/stock.lock"
+
+BUYER="$1"
+QTY="$2"
+
+# Validate input
+if [ $# -ne 2 ]; then
+    echo "Usage: buy_reactor_core <buyer> <quantity>"
+    exit 1
+fi
+
+if ! [[ "$QTY" =~ ^[0-9]+$ ]] || [ "$QTY" -le 0 ]; then
+    echo "Quantity must be a positive integer."
+    exit 1
+fi
+
+(
+    flock -x 200
+
+    STOCK=$(cat "$STOCK_FILE")
+
+    if [ "$STOCK" -ge "$QTY" ]; then
+
+        NEW_STOCK=$((STOCK - QTY))
+
+        # Delay while holding the lock
+        sleep 0.1
+
+        echo "$NEW_STOCK" > "$STOCK_FILE"
+
+        echo "$(date) | Buyer=$BUYER | Qty=$QTY | StudentID=p20240013" >> "$LOG_FILE"
+
+    else
+        echo "Not enough stock for $BUYER"
+    fi
+
+) 200>"$LOCK_FILE"

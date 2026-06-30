@@ -1,0 +1,5 @@
+PATH:
+/home/se-mi-sorakmony/bin:/home/se-mi-sorakmony/bin:/home/se-mi-sorakmony/bin:/home/se-mi-sorakmony/bin:/home/se-mi-sorakmony/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Greeter Location:
+/home/se-mi-sorakmony/bin/greeter

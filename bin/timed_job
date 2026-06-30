@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$(date) : Timed job executed" >> "$1"
